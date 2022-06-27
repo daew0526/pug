@@ -1,0 +1,25 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title #{pageTitle} | #{siteName}
+  link(rel="stylesheet", href="/static/js/css/styles.css")
+  link(rel='preconnect', href='https://fonts.googleapis.com')
+  link(rel='stylesheet', href='//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css')
+.user_see_login
+  .user_see_loginbox
+    form.user_see_form
+      .user_see_home
+        button(type='button', onclick="location.href='/';") Home
+        div.user
+            br
+            br
+            img(src="/"+user.avatarUrl,style="width:100px")
+            br
+            br
+            h3 이름
+            h3=user.username
+            br
+            h3 email
+            h3=user.email

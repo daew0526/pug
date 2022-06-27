@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/static/js/css/styles.css")
+        title #{pageTitle} | #{siteName}
+    body
+        if errorMessage
+            span=errorMessage
+        form(method="POST" class="join_form")
+            .join_home
+                button(type='button' onclick="location.href='/';") Home
+            label(for="id") 아이디
+            input(type="text", name="id",required,placeholder="Input Id",maxlength="10")
+            label(for="password") 비밀번호
+            input(type="password", name="password",required,placeholder="Input password")
+            label(for="password1") 비밀번호 재확인
+            input(type="password", name="password1",required,placeholder="Confirm password")
+            label(for="email") 이메일
+            input(type="email", name="email",required,placeholder="Input Email")
+            label(for="username") 이름
+            input(type="text", name="username",required,placeholder="Input Username")
+            input(id="submit" type="submit", value="Join")
+            a(href="/login") Already account? &rarr;

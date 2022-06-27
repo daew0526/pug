@@ -1,0 +1,36 @@
+.upload #title {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 3px 0;
+    font-size: 20px;
+    width: 99%;
+}
+
+.upload #avatar {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 3px 0;
+    font-size: 20px;
+    width: 99%;
+    height: 4%;
+}
+
+.upload #submit {
+    padding: 7px 18px;
+    background-color: #FF6600;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.upload textarea {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 3px 0;
+    font-size: 20px;
+    width: 99%;
+    height: 70%;
+}

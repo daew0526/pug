@@ -1,0 +1,51 @@
+extends ../base
+
+block content
+    .notice_catagori
+        h2 카테고리
+    .notice_title
+        =notice.title
+    .notice_information
+        .notice_information_1
+            small 작성자 : #{user.username}  
+            small 작성일 : #{notice.createAt}
+            br
+            br
+            a(href=`${notice.id}/edit`) Edit &rarr; 
+            nbsp
+            a(href=`${notice.id}/delete`) Delte &rarr; 
+        .notice_information_2
+            small rating : #{notice.meta.rating} 
+            small views : #{notice.meta.views}
+            br
+            br
+            a(href=`${notice.id}/report`) report &rarr;
+    .notice_content
+        =notice.description
+        if notice.image
+            img(src="/"+notice.image, width="100",height="100")
+
+    .notice_comment
+        -for(let i=0;i<notice.comment.parentid;i++)
+            p=notice.comment[i].parentid
+            p=notice.comment[i].parentcomment
+            br
+            if notice.comment[i].parentid
+                -for(let j=0;j<notice.comment[i].childid;j++)
+                    small=notice.comment[i].childid[j]
+                    small=notice.comment[i].childcomment[j]
+                    br
+                    form(method="POST")
+                        .notice_comment_1
+                            input(type="text", name="childid",placeholder="child ID")
+                        .notice_comment_2
+                            textarea(name="childcomment", cols="20", rows="5",id="childcomment",placeholder="child comment")
+                        .notice_comment_3
+                            input(type="submit",value="submit")
+        form(method="POST")
+        .notice_comment_1
+            input(type="text", name="parentid",placeholder="parent ID")
+        .notice_comment_2
+            textarea(name="parentcomment", cols="20", rows="5",id="parentcomment",placeholder="parent comment")
+        .notice_comment_3
+            input(type="submit",value="submit")

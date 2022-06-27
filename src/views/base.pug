@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/static/js/css/styles.css")
+        title #{pageTitle} | #{siteName}
+    body
+        .header
+            .navbar
+                .base_home
+                    button(type='button' onclick="location.href='/';") Home
+                .base_menu
+                    li
+                        a(href='/notice') community
+                    li
+                        a(href='/ranking') ranking
+                    li
+                        a(href='/interior') interior
+                if !loggedIn
+                    .base_logout
+                        a(href='/login') login 
+                else
+                    .base_login
+                        .base_login_img
+                            img(src="/"+user.avatarUrl,style="width:70px")
+                        .base_login_meun
+                                #{user.username}
+                                a(href=`/user/${user._id}`) Profile
+                                a(href=`/user/edit`) Edit
+                                a(href="/logout") Logout
+        .section
+            block content
+    include includes/footer

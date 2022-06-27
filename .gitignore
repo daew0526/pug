@@ -1,0 +1,5 @@
+./node_modules
+./babel.config
+./package-lock
+.env
+./uploads

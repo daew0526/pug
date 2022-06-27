@@ -1,0 +1,33 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title login
+    link(rel="stylesheet", href="/static/js/css/styles.css")
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='stylesheet' href='//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css')
+body 
+    if errorMessage
+        span=errorMessage
+    .login_login
+        .login_loginbox
+            form(method="POST" class="login_form")
+                .login_home
+                    button(type='button' onclick="location.href='/';") Home
+                input(type="text", name="id",required,placeholder="Input Id")
+                br
+                input(type="password", name="password",required,placeholder="Input Password")
+                br
+                input(type="submit", id="loginbtn", value="Login")
+                .login_text
+                    a(href='/join') 회원가입
+                    
+            .login_icon
+                br
+                br
+                button.btn-social-login1(onclick="location.href='/user/github/start';")
+                    i.xi-2x.xi-github
+
+                button.btn-social-login2(onclick="location.href='/user/kakao/start';")
+                    i.xi-2x.xi-kakaotalk.text-dark

@@ -1,0 +1,43 @@
+extends base
+include mixins/notice
+block content
+        // notice 부분
+        .community_notice
+            .community_categori
+                li
+                    a(href='') 공지
+                li
+                    a(href='') 자유
+                li
+                    a(href='') 팁
+                li
+                    a(href='') 질문
+            .community_board
+                strong 카테고리
+                .community_list
+                    .community_list_head
+                        .title 제목
+                        .user 작성자
+                        .date 작성일
+                        .view 조회수
+                        .good 좋아요
+                    .community_list_body
+                        if notice
+                            each item in notice
+                                +notice(item)
+                .community_page
+                    form.community_form
+                        .community_search
+                            input(type='text' placeholder='검색어 입력')
+                            img(src='https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png')
+                    a(href='') <<
+                    a(href='') <
+                    a(href='') 1
+                    a(href='') 2
+                    a(href='') 3
+                    a(href='') 4
+                    a(href='') 5
+                    a(href='') >
+                    a(href='') >>
+                .community_upload
+                    button(type='button' onclick="location.href='notice/upload';") 작성

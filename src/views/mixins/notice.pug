@@ -1,0 +1,15 @@
+mixin notice(item)
+    .item
+      .id 
+        =id
+      .title
+        a(href=`/notice/${item.id}`)=item.title
+      .user 
+        =user.username
+      .date 
+        =item.createAt
+        //=1
+      .view 
+        #{item.meta.view >0 ? `${item.meta.views} views`: `${item.meta.views}`}
+      .good
+        #{item.meta.rating} / 5
