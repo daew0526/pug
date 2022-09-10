@@ -14,7 +14,7 @@ export const search = async (req, res) => {
   if (title) {
     notice = await Notice.find({
       title: {
-        $regex: new RegExp(`${title}`, "i"),
+        $regex: new RegExp(`${title}`, "i")
       },
     });
   }
@@ -46,7 +46,7 @@ export const postUpload = async (req, res) => {
       description: content,
     });
   }
-  return res.redirect("/");
+  return res.redirect("/notice");
 };
 
 export const see = async (req, res) => {
@@ -85,7 +85,7 @@ export const postEdit = async (req, res) => {
   } = req;
   const exists = await Notice.exists({ _id: id });
   if (!exists) {
-    return res.redirect("/");
+    return res.redirect("/notice");
   }
   if (file) {
     await Notice.findByIdAndUpdate(
@@ -103,7 +103,7 @@ export const postEdit = async (req, res) => {
       description: content,
     });
   }
-  return res.redirect("/");
+  return res.redirect("/notice");
 };
 
 export const deleteNotice = async (req, res) => {
@@ -111,7 +111,7 @@ export const deleteNotice = async (req, res) => {
     params: { id },
   } = req;
   await Notice.findByIdAndDelete(id);
-  return res.redirect("/");
+  return res.redirect("/notice");
 };
 
 export const getReport = async (req, res) => {

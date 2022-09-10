@@ -14,9 +14,11 @@ import {
   getComment,
   postComment,
   community,
+  search,
 } from "../controllers/noticeController";
 const noticeRouter = express.Router();
 
+noticeRouter.get("/search", search);
 noticeRouter.get("/", community);
 noticeRouter
   .route("/upload")

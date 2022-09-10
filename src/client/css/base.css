@@ -6,7 +6,7 @@ body {
 .header {
     display: flex;
     position: relative;
-    width: 1840px;
+    
     margin: 0 auto;
     padding: 40px;
     background-color: rgb(255, 255, 255);
@@ -19,6 +19,8 @@ body {
     width: 1024px;
     justify-content: space-between;
     align-items: center;
+    
+
 }
 
 .base_home {
@@ -39,7 +41,7 @@ body {
     display: flex;
     align-items: flex-end;
     list-style: none;
-    padding-right: 430px;
+    padding-right: 300px;
 }
 
 .base_menu li {
@@ -49,10 +51,10 @@ body {
 .section {
     margin: 0 auto;
     width: 1024px;
-    height: 842px;
+    height: 175em;
     box-sizing: border-box;
-    border-right: 1px solid rgb(235, 235, 235);
-    border-left: 1px solid rgb(235, 235, 235);
+   /* border-right: 1px solid rgb(235, 235, 235);
+    border-left: 1px solid rgb(235, 235, 235); */
 }
 
 .section form {
@@ -69,21 +71,36 @@ body {
 
 .base_login {
     display: flex;
-    font-size: 13px;
+    font-size: 14px;
+    position: relative;
+}
+
+.base_login_img {
+    position: relative;
+    text-align: center;
+    height: 30px;
+    padding-top: 5px;
+    padding-left: 0px;
+    width: 95px;
 }
 
 .base_login_img img{
-    width: 80px;
+    width: 70px;
     padding: 5px;
+    text-align: center;
+    position: relative;
+    padding-top: 5px;
+    padding-right: 0px;
 }
 
 .base_login_meun {
     margin-top: 10px;
     display: flex;
-    flex-direction: column;
+    padding: 8px 12px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    padding-right: 10px;
 }

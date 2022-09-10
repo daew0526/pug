@@ -2,6 +2,10 @@ mixin notice(item)
     .item
       .id 
         =id
+      .image 
+        =notice.description
+        if item.image
+            img(src="/"+item.image, width="10",height="10")
       .title
         a(href=`/notice/${item.id}`)=item.title
       .user 

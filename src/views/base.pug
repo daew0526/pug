@@ -24,9 +24,10 @@ html(lang="en")
                 else
                     .base_login
                         .base_login_img
-                            img(src="/"+user.avatarUrl,style="width:70px")
-                        .base_login_meun
+                                img(src="/"+user.avatarUrl,style="width:70px")
                                 #{user.username}
+                        .base_login_meun
+                                
                                 a(href=`/user/${user._id}`) Profile
                                 a(href=`/user/edit`) Edit
                                 a(href="/logout") Logout

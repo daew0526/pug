@@ -2,30 +2,44 @@ extends ../base
 
 block content
     .notice_catagori
-        h2 카테고리
+        h4 Category
     .notice_title
-        =notice.title
+        =notice.title 
+        br
+        
     .notice_information
         .notice_information_1
-            small 작성자 : #{user.username}  
-            small 작성일 : #{notice.createAt}
+            img(src="/"+user.avatarUrl,style="width:70px")
+            small   #{user.username} 
             br
+            small  #{notice.createAt}
             br
+            
             a(href=`${notice.id}/edit`) Edit &rarr; 
             nbsp
-            a(href=`${notice.id}/delete`) Delte &rarr; 
+            a(href=`${notice.id}/delete`) Delte &rarr;
+            br
+            br
         .notice_information_2
+            br
             small rating : #{notice.meta.rating} 
             small views : #{notice.meta.views}
             br
-            br
+            
             a(href=`${notice.id}/report`) report &rarr;
+            br
     .notice_content
-        =notice.description
+        br
+        br  
         if notice.image
-            img(src="/"+notice.image, width="100",height="100")
+            img(src="/"+notice.image, width="500",height="500")
+        br
+        br
+        =notice.description
+        br
+        br
 
-    .notice_comment
+    //.notice_comment
         -for(let i=0;i<notice.comment.parentid;i++)
             p=notice.comment[i].parentid
             p=notice.comment[i].parentcomment
@@ -44,8 +58,8 @@ block content
                             input(type="submit",value="submit")
         form(method="POST")
         .notice_comment_1
-            input(type="text", name="parentid",placeholder="parent ID")
+            input( type="text", name="parentid",placeholder="parent ID")
         .notice_comment_2
-            textarea(name="parentcomment", cols="20", rows="5",id="parentcomment",placeholder="parent comment")
+            textarea( name="parentcomment", cols="20", rows="5",id="parentcomment",placeholder="parent comment")
         .notice_comment_3
-            input(type="submit",value="submit")
+            input( type="submit",value="submit")

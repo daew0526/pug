@@ -1,3 +1,114 @@
 extends base
 
 block content
+        style 
+            include home.css
+    
+        .ranking
+            .ranking_bar
+                nav
+                    .container
+                        ul
+                            li
+                                a(href='#')
+                                    | 정렬
+                                    i.fa.fa-angle-down
+                                ul
+                                    li
+                                        a(href='#') 최신순
+                                    li
+                                        a(href='#') 랭킹순
+                                    li.sub-menu
+                                        a(href='#')
+                                            | Categories
+                                            i.fa.fa-angle-down
+                                        ul
+                                            li
+                                                a(href='#') Category One
+                                            li
+                                                a(href='#') Category Two
+                                            li
+                                                a(href='#') Category Three
+        .ranking_board
+            .list
+                .thumbnail
+                    a(href='') @
+                .title 오늘 완성한 인테리어입니다
+                .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .list
+                .thumbnail
+                    a(href='') @@
+                .title 오늘 완성한 인테리어입니다
+                .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .list
+                .thumbnail
+                    a(href='') @@@
+                .title 오늘 완성한 인테리어입니다
+                .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .list
+                .thumbnail
+                    a(href='') @@@@
+                .title 오늘 완성한 인테리어입니다
+                .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .list
+                .thumbnail
+                    a(href='') @@@@@
+                .title 오늘 완성한 인테리어입니다
+                .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .list
+                .thumbnail
+                    a(href='') @@@@@@
+                .title 오늘 완성한 인테리어입니다
+                .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .list
+                .thumbnail
+                    a(href='') @@@@@@@
+                .title 오늘 완성한 인테리어입니다
+                    .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .list
+                .thumbnail
+                    a(href='') @@@@@@@@
+                .title 오늘 완성한 인테리어입니다
+                    .user 작성자
+                .good 좋아요 32
+                .view 조회수 510
+            .page
+                form.form
+                    .search
+                        input(type='text' placeholder='검색어 입력')
+                        img(src='https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png')
+                a(href='') <<
+                a(href='') <
+                a(href='') 1
+                a(href='') 2
+                a(href='') 3
+                a(href='') 4
+                a(href='') 5
+                a(href='') >
+                a(href='') >>
+            .upload
+                button(type='button' onclick="location.href='upload.html';") 작성
+        script(src='http://code.jquery.com/jquery-1.12.4.min.js')
+        script.
+            $('nav li').hover(
+            function () {
+            $('ul', this).stop().slideDown(200);
+            },
+            function () {
+            $('ul', this).stop().slideUp(200);
+            }
+            );
